@@ -29,7 +29,7 @@ let package = Package(
             name: "SwiftGodotKit",
             dependencies: [
                 "SwiftGodot",
-                .target(name: "binary_libgodot", condition: .when(platforms: [.macOS])),
+                // .target(name: "binary_libgodot", condition: .when(platforms: [.macOS])),
                 .target(name: "libgodot", condition: .when(platforms: [.linux, .windows])),
             ]
         ),
@@ -54,16 +54,16 @@ let package = Package(
             name: "Dodge",
             dependencies: [
                 "SwiftGodotKit",
-                .target(name: "binary_libgodot", condition: .when(platforms: [.macOS])),
+                // .target(name: "binary_libgodot", condition: .when(platforms: [.macOS])),
                 .target(name: "libgodot", condition: .when(platforms: [.linux, .windows])),
             ],
             resources: [.copy ("Project")]
         ),
-        .binaryTarget (
-            name: "binary_libgodot",
-            url: "https://github.com/migueldeicaza/SwiftGodotKit/releases/download/v1.1.0/libgodot.xcframework.zip",
-            checksum: "a90f2082714ac652c8aa6c1546a707c00a362b855071afa73a4443ffd96dcea0"
-        ),
+        // .binaryTarget (
+        //     name: "binary_libgodot",
+        //     url: "https://github.com/migueldeicaza/SwiftGodotKit/releases/download/v1.1.0/libgodot.xcframework.zip",
+        //     checksum: "a90f2082714ac652c8aa6c1546a707c00a362b855071afa73a4443ffd96dcea0"
+        // ),
         .systemLibrary(
             name: "libgodot"
         ),
